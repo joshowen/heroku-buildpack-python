@@ -172,11 +172,8 @@ source $BIN_DIR/steps/cryptography
 # Install dependencies with Pip.
 sub-env $BIN_DIR/steps/pip-install
 
-# Handle NodeJS buildpack for collectstatic
-export PATH=$BUILD_DIR/vendor/node/bin:$BUILD_DIR/bin:$BUILD_DIR/node_modules/.bin:$PATH
-
 # Django collectstatic support.
-source $BIN_DIR/steps/collectstatic
+sub-env $BIN_DIR/steps/collectstatic
 
 
 # ### Finalize
