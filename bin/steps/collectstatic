@@ -2,6 +2,9 @@
 
 source $BIN_DIR/utils
 
+# Handle NodeJS buildpack for collectstatic
+export PATH=$BUILD_DIR/vendor/node/bin:$BUILD_DIR/bin:$BUILD_DIR/node_modules/.bin:$PATH
+
 MANAGE_FILE=$(find . -maxdepth 3 -type f -name 'manage.py' | head -1)
 MANAGE_FILE=${MANAGE_FILE:-fakepath}
 
