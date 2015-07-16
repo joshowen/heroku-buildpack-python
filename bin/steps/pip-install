@@ -11,9 +11,9 @@ if (grep -iq -e "numpy" requirements.txt) then
 fi
 
 echo $ATLAS
-ls -alh $ATLAS
+ldd $ATLAS
 echo $LAPACK
-ls -alh $LAPACK
+ldd $LAPACK
 
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
 
