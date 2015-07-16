@@ -4,6 +4,12 @@ puts-step "Installing dependencies with pip"
 [ ! "$FRESH_PYTHON" ] && bpwatch start pip_install
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
 
+# Install numpy first if we want it
+if (grep -iq -e "numpy" requirements.txt) then
+    /app/.heroku/python/bin/pip install `grep numpy requirements.txt`
+fi
+
+
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
 
 # Smart Requirements handling
