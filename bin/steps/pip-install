@@ -7,7 +7,7 @@ puts-step "Installing dependencies with pip"
 # Install numpy first if we want it
 if (grep -iq -e "numpy" requirements.txt) then
     puts-step "Installing numpy with pip"
-    /app/.heroku/python/bin/pip install `grep numpy requirements.txt`  --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
+    /app/.heroku/python/bin/pip install `grep numpy requirements.txt`  --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
 fi
 
 echo $ATLAS
@@ -15,7 +15,7 @@ ldd $ATLAS
 echo $LAPACK
 ldd $LAPACK
 
-/app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | indent
+/app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
 
 # Smart Requirements handling
 cp requirements.txt .heroku/python/requirements-declared.txt
