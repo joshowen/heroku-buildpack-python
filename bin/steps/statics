@@ -26,7 +26,7 @@ ls $GNU_LIB
 echo $'\n'gcc addon ${GCC_DIR}
 ls $GCC_ADDON
 
-export BLAS=$LIB_HOME/atlas-base/atlas/libatlas.a
+export BLAS=$LIB_HOME/atlas-base/atlas/libblas.a
 export LAPACK=$LIB_HOME/atlas-base/atlas/liblapack.a
 export ATLAS=$LIB_HOME/atlas-base/libatlas.a
 export LIBRARY_PATH=$LIB_HOME/atlas-base/:$GNU_LIB/:$GCC_ADDON/:$LIBRARY_PATH
