@@ -1,2 +1,6 @@
 *.pyc
 site
+
+.project
+
+.pydevproject

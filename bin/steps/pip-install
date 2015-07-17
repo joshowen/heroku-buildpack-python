@@ -10,11 +10,6 @@ if (grep -iq -e "numpy" requirements.txt) then
     /app/.heroku/python/bin/pip install `grep numpy requirements.txt`  --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
 fi
 
-echo $ATLAS
-ldd $ATLAS
-echo $LAPACK
-ldd $LAPACK
-
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
 
 # Smart Requirements handling
