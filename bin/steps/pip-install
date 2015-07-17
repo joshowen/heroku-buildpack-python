@@ -10,6 +10,7 @@ if (grep -iq -e "numpy" requirements.txt) then
     echo $LD_LIBRARY_PATH
     echo $LIBRARY_PATH
     /app/.heroku/python/bin/pip install `grep numpy requirements.txt`  --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
+    python -c "import numpy"
 fi
 
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
