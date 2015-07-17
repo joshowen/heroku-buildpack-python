@@ -7,6 +7,8 @@ puts-step "Installing dependencies with pip"
 # Install numpy first if we want it
 if (grep -iq -e "numpy" requirements.txt) then
     puts-step "Installing numpy with pip"
+    echo $LD_LIBRARY_PATH
+    echo $LIBRARY_PATH
     /app/.heroku/python/bin/pip install `grep numpy requirements.txt`  --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir
 fi
 
